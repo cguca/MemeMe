@@ -20,4 +20,14 @@ class MemeMeTextDelegate: NSObject, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true;
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text! == "" {
+            if textField.tag == 0 {
+                textField.text = "TOP"
+            } else {
+                textField.text = "BOTTOM"
+            }
+        }
+    }
 }

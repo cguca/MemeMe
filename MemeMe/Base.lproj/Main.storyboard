@@ -27,7 +27,11 @@
                                 <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Cancel" width="175.66666666666669" id="N5K-0m-EkT"/>
+                                    <barButtonItem title="Cancel" width="175.66666666666669" id="N5K-0m-EkT">
+                                        <connections>
+                                            <action selector="cancelMeme:" destination="BYZ-38-t0r" id="lib-Bb-ar4"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Item" image="square.and.arrow.up.fill" catalog="system" width="485" id="e24-Ho-HV5">
                                         <connections>
                                             <action selector="shareMeme:" destination="BYZ-38-t0r" id="ObL-BU-rKM"/>
@@ -65,11 +69,11 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="qjd-dS-KhO" id="uVy-ND-OR7"/>
-                        <outlet property="bottomToolbar" destination="0pE-mt-NLx" id="qHm-Kx-Hsm"/>
+                        <outlet property="bottomToolbar" destination="0pE-mt-NLx" id="Psl-ni-T6H"/>
                         <outlet property="cameraButton" destination="laO-kS-JO0" id="3X1-lf-ZTu"/>
                         <outlet property="imagePickerView" destination="9dB-1I-S1s" id="nWY-7K-Cav"/>
                         <outlet property="shareButton" destination="e24-Ho-HV5" id="2id-ze-4mg"/>
@@ -87,9 +91,6 @@
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

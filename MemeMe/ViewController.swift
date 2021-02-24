@@ -44,14 +44,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.textAlignment = .center
         topTextField.textColor = .white
         topTextField.delegate = self.memeMeTextDelegate
-        topTextField.isEnabled = false
+//        topTextField.isEnabled = false
     
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.text = "BOTTOM"
         bottomTextField.textAlignment = .center
         bottomTextField.textColor = .white
         bottomTextField.delegate = self.memeMeTextDelegate
-        bottomTextField.isEnabled = false
+//        bottomTextField.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,8 +73,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
-        topTextField.isEnabled = true
-        bottomTextField.isEnabled = true
+//        topTextField.isEnabled = true
+//        bottomTextField.isEnabled = true
     }
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
@@ -83,8 +83,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .camera
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
-        topTextField.isEnabled = true
-        bottomTextField.isEnabled = true
+//        topTextField.isEnabled = true
+//        bottomTextField.isEnabled = true
     }
     
     func generateMemedImage() -> UIImage {
@@ -148,10 +148,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 // developer.apple.com/documentation/foundation/notification/1779652-userinfo
     @objc func keyboardWillShow(_ notification:Notification) {
-        
-        if notification.object is UITextField? {
-                // work with the field editor and posting object
-        }
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
@@ -168,5 +164,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
    
+    @IBAction func cancelMeme(_ sender: Any) {
+        imagePickerView.image = nil
+        topTextField.text = "TOP"
+//        topTextField.isEnabled = false
+        bottomTextField.text = "BOTTOM"
+//        bottomTextField.isEnabled = false
+        shareButton.isEnabled = false
+    }
 }
 

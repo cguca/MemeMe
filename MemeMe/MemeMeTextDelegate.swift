@@ -11,7 +11,7 @@ import UIKit
 class MemeMeTextDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text!.isEmpty {
+        if textField.text! == "BOTTOM" || textField.text! == "TOP" {
             textField.text = ""
         }
     }

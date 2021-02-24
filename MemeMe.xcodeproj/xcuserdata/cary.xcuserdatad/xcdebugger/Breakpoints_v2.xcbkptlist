@@ -14,41 +14,41 @@
             filePath = "MemeMe/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "subscribeToKeyboardNotifications()"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CC866554-1070-4E1D-9259-457F1BC9D78F"
-            shouldBeEnabled = "No"
+            uuid = "625BC6C9-DB0D-4880-96B2-EBE7D6D729E4"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeMe/ViewController.swift"
+            filePath = "MemeMe/MemeMeTextDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "getKeyboardHeight(_:)"
-            landmarkType = "9">
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "textFieldDidBeginEditing(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9D60A0D-C618-4C7B-9901-09D0448D1FB5"
-            shouldBeEnabled = "No"
+            uuid = "53E36F05-6308-4A9A-9DC5-D402BE4A385B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "keyboardWillShow(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

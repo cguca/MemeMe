@@ -27,15 +27,15 @@
                                 <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="N5K-0m-EkT"/>
-                                    <barButtonItem title="Item" image="square.and.arrow.up.fill" catalog="system" id="e24-Ho-HV5">
+                                    <barButtonItem title="Cancel" width="175.66666666666669" id="N5K-0m-EkT"/>
+                                    <barButtonItem title="Item" image="square.and.arrow.up.fill" catalog="system" width="485" id="e24-Ho-HV5">
                                         <connections>
                                             <action selector="shareMeme:" destination="BYZ-38-t0r" id="ObL-BU-rKM"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-dS-KhO">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-dS-KhO">
                                 <rect key="frame" x="20" y="625" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="20" y="692" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Album" id="nud-Tv-X2c">
+                                    <barButtonItem title="Album" width="216" id="nud-Tv-X2c">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="8zn-Il-aRw"/>
                                         </connections>
@@ -69,10 +69,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="qjd-dS-KhO" id="uVy-ND-OR7"/>
+                        <outlet property="bottomToolbar" destination="0pE-mt-NLx" id="qHm-Kx-Hsm"/>
                         <outlet property="cameraButton" destination="laO-kS-JO0" id="3X1-lf-ZTu"/>
                         <outlet property="imagePickerView" destination="9dB-1I-S1s" id="nWY-7K-Cav"/>
                         <outlet property="shareButton" destination="e24-Ho-HV5" id="2id-ze-4mg"/>
                         <outlet property="topTextField" destination="YAt-vV-maa" id="qq6-Vg-wO0"/>
+                        <outlet property="topToolbar" destination="JCU-QA-IQf" id="5MB-GK-0V2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

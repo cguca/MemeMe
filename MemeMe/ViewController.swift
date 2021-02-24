@@ -14,16 +14,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     var memedImage: UIImage?
     
     let memeMeTextDelegate = MemeMeTextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.cyan,
-        NSAttributedString.Key.foregroundColor: UIColor.red,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  3.0
+        //NSAttributedString.Key.strokeColor: UIColor.blue,
+       // NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
+       // NSAttributedString.Key.strokeWidth:  2.0
     ]
     
     struct Meme {
@@ -37,16 +39,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        topTextField.text = "TOPP"
-        topTextField.textAlignment = .center
         topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.text = "TOP"
+        topTextField.textAlignment = .center
+        topTextField.textColor = .white
         topTextField.delegate = self.memeMeTextDelegate
-        bottomTextField.text = "BOTTOMM"
-        bottomTextField.textAlignment = .center
+        topTextField.isEnabled = false
+    
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.text = "BOTTOM"
+        bottomTextField.textAlignment = .center
+        bottomTextField.textColor = .white
         bottomTextField.delegate = self.memeMeTextDelegate
-        
-        
+        bottomTextField.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +73,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
+        topTextField.isEnabled = true
+        bottomTextField.isEnabled = true
     }
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
@@ -76,16 +83,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .camera
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
+        topTextField.isEnabled = true
+        bottomTextField.isEnabled = true
     }
     
     func generateMemedImage() -> UIImage {
-
+        // Hide toolbar and navbar
+        topToolbar.isHidden = true
+        bottomToolbar.isHidden = true
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
+        // Show toolbar and navbar
+        topToolbar.isHidden = false
+        bottomToolbar.isHidden = false
+        
         return memedImage
     }
 
@@ -130,8 +146,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+// developer.apple.com/documentation/foundation/notification/1779652-userinfo
     @objc func keyboardWillShow(_ notification:Notification) {
-
+        
+        if notification.object is UITextField? {
+                // work with the field editor and posting object
+        }
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
@@ -147,5 +167,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
+   
 }
 

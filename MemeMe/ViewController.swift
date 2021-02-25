@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
     var memedImage: UIImage?
+    var activeTextField: UITextField?
     
     let memeMeTextDelegate = MemeMeTextDelegate()
     
@@ -43,15 +44,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = "TOP"
         topTextField.textAlignment = .center
         topTextField.textColor = .white
-        topTextField.delegate = self.memeMeTextDelegate
-//        topTextField.isEnabled = false
+        topTextField.delegate = self //.memeMeTextDelegate
     
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.text = "BOTTOM"
         bottomTextField.textAlignment = .center
         bottomTextField.textColor = .white
-        bottomTextField.delegate = self.memeMeTextDelegate
-//        bottomTextField.isEnabled = false
+        bottomTextField.delegate = self //.memeMeTextDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,8 +72,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
-//        topTextField.isEnabled = true
-//        bottomTextField.isEnabled = true
     }
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
@@ -83,8 +80,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.sourceType = .camera
         present(imagePickerController, animated: true, completion: nil)
         shareButton.isEnabled = true
-//        topTextField.isEnabled = true
-//        bottomTextField.isEnabled = true
     }
     
     func generateMemedImage() -> UIImage {
@@ -146,9 +141,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-// developer.apple.com/documentation/foundation/notification/1779652-userinfo
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if  activeTextField?.tag == 1 {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardHideShow(_ notification:Notification) {
@@ -167,10 +163,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(_ sender: Any) {
         imagePickerView.image = nil
         topTextField.text = "TOP"
-//        topTextField.isEnabled = false
         bottomTextField.text = "BOTTOM"
-//        bottomTextField.isEnabled = false
         shareButton.isEnabled = false
+    }
+    
+    // Text Delegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text! == "BOTTOM" || textField.text! == "TOP" {
+            textField.text = ""
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text! == "" {
+            if textField.tag == 0 {
+                textField.text = "TOP"
+            } else {
+                textField.text = "BOTTOM"
+            }
+        }
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeTextField = textField
+        return true
     }
 }
 

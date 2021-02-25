@@ -31,16 +31,14 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-dS-KhO">
-                                <rect key="frame" x="20" y="625" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-dS-KhO">
+                                <rect key="frame" x="22" y="636" width="372" height="34"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pE-mt-NLx">
-                                <rect key="frame" x="20" y="692" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pE-mt-NLx">
+                                <rect key="frame" x="20" y="704" width="374" height="44"/>
                                 <items>
                                     <barButtonItem title="Album" width="216" id="nud-Tv-X2c">
                                         <connections>
@@ -54,14 +52,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-1I-S1s">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-1I-S1s">
                                 <rect key="frame" x="20" y="198" width="378" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAt-vV-maa">
-                                <rect key="frame" x="20" y="80" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAt-vV-maa">
+                                <rect key="frame" x="20" y="92" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -71,8 +68,27 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JCU-QA-IQf" secondAttribute="trailing" constant="20" id="2JD-1X-OlN"/>
+                            <constraint firstAttribute="bottom" secondItem="0pE-mt-NLx" secondAttribute="bottom" constant="12" id="33a-l6-Hqh"/>
+                            <constraint firstAttribute="bottom" secondItem="0pE-mt-NLx" secondAttribute="bottom" constant="12" id="A8X-xy-9d8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAt-vV-maa" secondAttribute="trailing" constant="20" id="BT1-6f-VIw"/>
                             <constraint firstItem="JCU-QA-IQf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EUf-tf-qIO"/>
+                            <constraint firstItem="qjd-dS-KhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jli-KD-7Bm"/>
+                            <constraint firstItem="0pE-mt-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K9A-N6-Axh"/>
+                            <constraint firstItem="0pE-mt-NLx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="12" id="NEy-kP-Vfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qjd-dS-KhO" secondAttribute="trailing" constant="18" id="R3Q-ll-7bt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAt-vV-maa" secondAttribute="trailing" constant="20" id="SQ9-VP-VgZ"/>
+                            <constraint firstItem="YAt-vV-maa" firstAttribute="top" secondItem="JCU-QA-IQf" secondAttribute="bottom" constant="36" id="bOK-bS-1J6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0pE-mt-NLx" secondAttribute="trailing" constant="20" id="cIh-PT-UKd"/>
                             <constraint firstItem="JCU-QA-IQf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="dK9-49-lGg"/>
+                            <constraint firstItem="0pE-mt-NLx" firstAttribute="top" secondItem="qjd-dS-KhO" secondAttribute="bottom" constant="34" id="gqk-39-6MP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0pE-mt-NLx" secondAttribute="trailing" constant="20" id="hD4-gH-mM6"/>
+                            <constraint firstItem="YAt-vV-maa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i0i-lp-gT0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0pE-mt-NLx" secondAttribute="trailing" constant="20" id="kyY-hE-BTN"/>
+                            <constraint firstItem="YAt-vV-maa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lQM-Wz-yoa"/>
+                            <constraint firstItem="0pE-mt-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="n3L-xs-4qj"/>
+                            <constraint firstItem="qjd-dS-KhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="pwf-hT-BGe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qjd-dS-KhO" secondAttribute="trailing" constant="20" id="rUS-od-PsS"/>
+                            <constraint firstItem="0pE-mt-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t1T-H5-P2r"/>
                         </constraints>
                     </view>
                     <connections>

@@ -30,4 +30,9 @@ class MemeMeTextDelegate: NSObject, UITextFieldDelegate {
             }
         }
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print(textField.tag)
+        return true
+    }
 }

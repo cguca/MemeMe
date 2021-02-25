@@ -23,10 +23,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeMeTextDelegate = MemeMeTextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        //NSAttributedString.Key.strokeColor: UIColor.blue,
-       // NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
-       // NSAttributedString.Key.strokeWidth:  2.0
+        NSAttributedString.Key.strokeWidth:  -3.0
     ]
     
     struct Meme {
@@ -36,23 +36,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memedImage : UIImage?
     }
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.text = "TOP"
-        topTextField.textAlignment = .center
-        topTextField.textColor = .white
-        topTextField.backgroundColor = .clear
-        topTextField.delegate = self //.memeMeTextDelegate
-    
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
-        bottomTextField.textColor = .white
-        bottomTextField.backgroundColor = .clear
-        bottomTextField.delegate = self //.memeMeTextDelegate
+      
+        configure(topTextField, with: "TOP")
+        configure(bottomTextField, with: "BOTTOM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -169,7 +158,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = false
     }
     
-    // Text Delegate
+    //Utility method to set the defaults for the text fields
+    func configure(_ textField: UITextField, with defaultText: String) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.text = defaultText
+        textField.textAlignment = .center
+        textField.backgroundColor = .clear
+        textField.delegate = self
+    }
+    
+    // Text Delegate methods
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text! == "BOTTOM" || textField.text! == "TOP" {
             textField.text = ""

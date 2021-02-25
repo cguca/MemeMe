@@ -16,25 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-1I-S1s">
+                                <rect key="frame" x="20" y="198" width="374" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCU-QA-IQf">
                                 <rect key="frame" x="20" y="12" width="374" height="44"/>
                                 <items>
-                                    <barButtonItem title="Cancel" width="175.66666666666669" id="N5K-0m-EkT">
-                                        <connections>
-                                            <action selector="cancelMeme:" destination="BYZ-38-t0r" id="lib-Bb-ar4"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem title="Item" image="square.and.arrow.up.fill" catalog="system" width="485" id="e24-Ho-HV5">
                                         <connections>
                                             <action selector="shareMeme:" destination="BYZ-38-t0r" id="ObL-BU-rKM"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Cancel" width="175.66666666666669" id="N5K-0m-EkT">
+                                        <connections>
+                                            <action selector="cancelMeme:" destination="BYZ-38-t0r" id="lib-Bb-ar4"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-1I-S1s">
-                                <rect key="frame" x="20" y="198" width="378" height="340"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAt-vV-maa">
                                 <rect key="frame" x="20" y="92" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
@@ -50,14 +50,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pE-mt-NLx">
                                 <rect key="frame" x="20" y="680" width="374" height="44"/>
                                 <items>
-                                    <barButtonItem title="Album" width="216" id="nud-Tv-X2c">
-                                        <connections>
-                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="8zn-Il-aRw"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Item" image="camera.fill" catalog="system" id="laO-kS-JO0">
+                                    <barButtonItem title="Item" image="camera.fill" catalog="system" width="220.33333333333334" id="laO-kS-JO0">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="1LG-9y-iD8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Album" width="163" id="nud-Tv-X2c">
+                                        <connections>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="8zn-Il-aRw"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

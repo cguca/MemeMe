@@ -44,12 +44,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = "TOP"
         topTextField.textAlignment = .center
         topTextField.textColor = .white
+        topTextField.backgroundColor = .clear
         topTextField.delegate = self //.memeMeTextDelegate
     
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.text = "BOTTOM"
         bottomTextField.textAlignment = .center
         bottomTextField.textColor = .white
+        bottomTextField.backgroundColor = .clear
         bottomTextField.delegate = self //.memeMeTextDelegate
     }
     
